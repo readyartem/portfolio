@@ -45,7 +45,7 @@ menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () =
 const track = document.getElementById('sliderTrack');
 const viewport = document.getElementById('projectSlider');
 const current = document.getElementById('slideCurrent');
-const slides = [...track.querySelectorAll('.slide')];
+const slides = [...track.querySelectorAll('.slide-page')];
 let slideIndex = 0;
 let dragStart = 0;
 let dragDelta = 0;
