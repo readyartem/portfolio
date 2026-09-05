@@ -16,3 +16,9 @@
 .facts div:nth-child(-n+2){border-bottom-color:var(--black)}
 .slider-track{gap:18px}.slider-track>.project{flex:0 0 calc((100% - 54px)/4)}.slider-track>.project .project-image img{aspect-ratio:1/1}.slider-track>.project .project-meta{display:block;position:relative;padding-right:30px}.slider-track>.project .project-meta strong,.slider-track>.project .project-meta span{display:block}.slider-track>.project .project-meta span{margin-top:5px;color:var(--muted)}.slider-track>.project .project-meta small{position:absolute;right:0;top:15px}.slider-track>.project .project-image span{font-size:9px}
 @media(max-width:700px){.slider-track{gap:30px}.slider-track>.project{flex:0 0 100%}.slider-track>.project .project-image img{aspect-ratio:1.28/1}.slider-track>.project .project-meta{display:grid;grid-template-columns:1fr 1fr 25px;padding-right:0}.slider-track>.project .project-meta span{margin-top:0}.slider-track>.project .project-meta small{position:static;text-align:right}}
+
+/* Final type and interaction pass. */
+:root{--sans:"DM Sans",Arial,sans-serif;--display:"Bodoni Moda",Georgia,serif}
+.hero h1 em,.section-intro h2 em,.about-copy h2 em,.contact-main em{font-family:var(--display);font-style:italic;font-weight:400;letter-spacing:-.04em}
+.section-intro h2,.about-copy h2{font-weight:600}.contact-main p{font-weight:500}.project:hover .project-image img{transform:none;filter:grayscale(1)}.project-image img{transition:none}.project-image span{display:none}.contact{min-height:64vh;padding-bottom:2vw}.contact-main{margin:6vw 0 3vw}.contact-link{margin-top:2vw}
+@media(max-width:700px){.contact{min-height:58vh;padding-bottom:7vw}.contact-main{margin:18vw 0 8vw}.contact-link{margin-top:10vw}}
