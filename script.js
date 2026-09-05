@@ -41,3 +41,33 @@ window.addEventListener('scroll', () => {
 const menu = document.getElementById('mobileMenu');
 document.getElementById('menuButton').addEventListener('click', () => menu.classList.toggle('open'));
 menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => menu.classList.remove('open')));
+
+const track = document.getElementById('sliderTrack');
+const viewport = document.getElementById('projectSlider');
+const current = document.getElementById('slideCurrent');
+const slides = [...track.querySelectorAll('.slide')];
+let slideIndex = 0;
+let dragStart = 0;
+let dragDelta = 0;
+let dragging = false;
+
+const showSlide = (index) => {
+  slideIndex = (index + slides.length) % slides.length;
+  track.style.transform = `translateX(-${slideIndex * 100}%)`;
+  current.textContent = String(slideIndex + 1).padStart(2, '0');
+};
+document.getElementById('slideNext').addEventListener('click', () => showSlide(slideIndex + 1));
+document.getElementById('slidePrev').addEventListener('click', () => showSlide(slideIndex - 1));
+
+viewport.addEventListener('pointerdown', (event) => {
+  dragging = true; dragStart = event.clientX; dragDelta = 0; viewport.classList.add('is-dragging'); viewport.setPointerCapture(event.pointerId);
+});
+viewport.addEventListener('pointermove', (event) => {
+  if (dragging) dragDelta = event.clientX - dragStart;
+});
+viewport.addEventListener('pointerup', () => {
+  if (!dragging) return;
+  if (Math.abs(dragDelta) > 50) showSlide(slideIndex + (dragDelta < 0 ? 1 : -1));
+  dragging = false; viewport.classList.remove('is-dragging');
+});
+viewport.addEventListener('pointercancel', () => { dragging = false; viewport.classList.remove('is-dragging'); });
