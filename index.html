@@ -1,242 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Artemii Muzychenko — UX/UI Designer & Developer</title>
-<meta name="description" content="Artemii Muzychenko — UX/UI Designer & Developer from Kyiv, based in Copenhagen. Minimal interfaces, sharp systems, real code." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='black'/><text x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial'>A</text></svg>">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Artemii Muzychenko is a UX/UI designer and developer based in Copenhagen.">
+  <title>Artemii Muzychenko — Designer / Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body data-loading="true">
+<body>
+  <div class="loader" id="loader"><span>AM / 26</span><strong id="loaderNumber">0</strong><i></i></div>
+  <div class="cursor" id="cursor"></div>
+  <div class="progress" id="progress"></div>
 
-<!-- CURSOR -->
-<div class="cursor" id="cursor"><span class="cursor-label">View</span></div>
+  <header class="header">
+    <a class="brand" href="#top">AM<span>©</span></a>
+    <span class="availability"><b></b> Available for selected projects</span>
+    <nav><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+    <button class="menu-button" id="menuButton" aria-label="Open menu"><span></span><span></span></button>
+  </header>
 
-<!-- LOADER -->
-<div class="loader" id="loader">
-  <div class="loader-top">
-    <span>Portfolio ©2026</span>
-    <span>Kyiv → Copenhagen</span>
-  </div>
-  <div class="loader-center">
-    <div class="loader-name"><span>Artemii Muzychenko</span></div>
-    <div class="loader-count"><span id="loadNum">000</span></div>
-  </div>
-  <div class="loader-bar-wrap"><div class="loader-bar" id="loadBar"></div></div>
-  <div class="loader-bottom">
-    <span>UX/UI Designer</span>
-    <span>& Developer</span>
-  </div>
-</div>
+  <div class="mobile-menu" id="mobileMenu"><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a><small>Kyiv → Copenhagen · 21 y.o.</small></div>
 
-<!-- NOISE -->
-<div class="noise"></div>
-<div class="scroll-progress" id="scrollProgress"><span></span></div>
+  <main id="top">
+    <section class="hero section-pad">
+      <div class="eyebrow"><span>Independent designer / developer</span><span>01 — 04</span></div>
+      <div class="hero-title"><h1>Interfaces<br><em>with intent.</em></h1><div class="hero-note">I make digital products feel<br>clear, considered and alive.</div></div>
+      <div class="hero-bottom"><p>Artemii Muzychenko<br><span>Kyiv native, Copenhagen based</span></p><a class="circle-link magnetic" href="#work"><span>See selected<br>work ↘</span></a><p class="hero-year">© 2026<br><span>Scroll to explore</span></p></div>
+      <div class="hero-mark" aria-hidden="true">+</div>
+    </section>
 
-<!-- NAV -->
-<header class="nav" id="nav">
-  <a href="#top" class="logo magnetic">AM<span>©</span></a>
-  <div class="nav-meta hide-m">
-    <span class="dot"></span> Open for freelance & full-time
-  </div>
-  <nav class="nav-links">
-    <a href="#about" class="magnetic">About</a>
-    <a href="#work" class="magnetic">Work</a>
-    <a href="#services" class="magnetic">Services</a>
-    <a href="#contact" class="btn-pill magnetic">Let's talk</a>
-  </nav>
-  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
-</header>
-
-<!-- MOBILE MENU -->
-<div class="mmenu" id="mmenu">
-  <a href="#about">About</a>
-  <a href="#work">Work</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
-  <div class="mmenu-foot">
-    <a href="https://www.behance.net/muzychenkoart" target="_blank" rel="noopener">Behance</a>
-    <a href="https://t.me/readyartem" target="_blank" rel="noopener">Telegram</a>
-    <a href="https://www.linkedin.com/in/muzychenkoart/" target="_blank" rel="noopener">LinkedIn</a>
-  </div>
-</div>
-
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-grid-lines"><span></span><span></span><span></span></div>
-    <p class="hero-kicker reveal"><span class="kicker-mark">↳</span> Artemii Muzychenko — Folio 2026 <span>Independent designer / developer</span></p>
-    <h1 class="hero-title">
-      <span class="line"><span class="line-inner">UX/UI</span></span>
-      <span class="line"><span class="line-inner">Designer <em>&</em></span></span>
-      <span class="line"><span class="line-inner">Developer</span></span>
-    </h1>
-    <div class="hero-row">
-      <p class="hero-sub reveal">I design minimal interfaces and ship them as real products. From Kyiv, now in Copenhagen. 21 y.o., BSc Computer Science.</p>
-      <div class="hero-cta reveal">
-        <a href="#work" class="btn-circle magnetic"><span>Scroll<br>to explore ↓</span></a>
+    <section class="work section-pad" id="work">
+      <div class="eyebrow"><span>Selected work</span><span>02 — 04</span></div>
+      <div class="section-intro"><h2>Less noise.<br><em>More signal.</em></h2><p>A small selection of digital work across product, web and culture. Click through for the full story on Behance.</p></div>
+      <div class="projects">
+        <a class="project project-wide magnetic" href="https://www.behance.net/gallery/235204293/CATI-MEME-COIN-WEBSITE-DESIGN" target="_blank" rel="noopener"><div class="project-image"><img src="https://mir-s3-cdn-cf.behance.net/projects/max_808/7b222a235204293.Y3JvcCwxNDg2LDExNjIsMjIwLDA.png" alt="CATI website design"><span>Open project ↗</span></div><div class="project-meta"><strong>CATI</strong><span>Meme coin / Web3</span><small>01</small></div></a>
+        <div class="project-pair">
+          <a class="project magnetic" href="https://www.behance.net/gallery/195203649/FITSYNC-FITNESS-MOBILE-APP-UXUI-DESIGN" target="_blank" rel="noopener"><div class="project-image"><img src="https://mir-s3-cdn-cf.behance.net/projects/404/c5e038195203649.Y3JvcCwzNjU5LDI4NjIsNjcwLDE3NzU.png" alt="FitSync fitness app"><span>Open project ↗</span></div><div class="project-meta"><strong>FitSync</strong><span>Mobile product / UX UI</span><small>02</small></div></a>
+          <a class="project project-offset magnetic" href="https://www.behance.net/gallery/207853507/DENTAL-CLINIC-WEBSITE-UXUI-DESIGN" target="_blank" rel="noopener"><div class="project-image"><img src="https://mir-s3-cdn-cf.behance.net/projects/404/810fe5207853507.Y3JvcCw0MzI0LDMzODIsMzQyLDE4MQ.png" alt="Dental clinic website"><span>Open project ↗</span></div><div class="project-meta"><strong>Dental Clinic</strong><span>Healthcare / Web design</span><small>03</small></div></a>
+        </div>
       </div>
-    </div>
-    <div class="hero-foot">
-      <span>Based in Copenhagen, DK — <span id="cphTime">--:--</span></span>
-      <span class="hide-m">11K+ views / 3.4K appreciations on Behance</span>
-      <span>(Scroll)</span>
-    </div>
-    <div class="hero-big-bg" aria-hidden="true">AM</div>
-  </section>
+      <a class="text-link" href="https://www.behance.net/muzychenkoart" target="_blank" rel="noopener">View all work on Behance <span>↗</span></a>
+    </section>
 
-  <!-- MARQUEE -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>UX/UI Design — Web Design — Development — Branding — Illustration — UX/UI Design — Web Design — Development — Branding — Illustration —&nbsp;</span>
-      <span>UX/UI Design — Web Design — Development — Branding — Illustration — UX/UI Design — Web Design — Development — Branding — Illustration —&nbsp;</span>
-    </div>
-  </div>
+    <section class="about section-pad" id="about">
+      <div class="eyebrow"><span>About / Approach</span><span>03 — 04</span></div>
+      <div class="about-grid"><div class="about-stamp">AM<br><span>21 / DK</span></div><div class="about-copy"><h2>Design is<br><em>how it works.</em></h2><p>I am Artemii, a UX/UI designer and developer from Kyiv, now based in Copenhagen. I work between visual clarity and technical reality — shaping ideas into interfaces people want to use.</p><p>Computer Science background. Google UX certified. Seven years of making things for the internet. I care about the sharp edge between a good idea and a finished product.</p><a class="text-link" href="https://www.linkedin.com/in/muzychenkoart/" target="_blank" rel="noopener">More about me <span>↗</span></a></div></div>
+      <div class="facts"><div><strong>21</strong><span>years old</span></div><div><strong>7+</strong><span>years designing</span></div><div><strong>BSc</strong><span>computer science</span></div><div><strong>DK</strong><span>based in Copenhagen</span></div></div>
+    </section>
 
-  <!-- ABOUT / STORYTELLING -->
-  <section class="about" id="about">
-    <div class="sec-head">
-      <span>01 / About</span><span>Storytelling — read by scrolling</span>
-    </div>
-    <div class="story">
-      <p class="story-line">I was born in <strong>Kyiv</strong> — a city that taught me to move fast and think clearly.</p>
-      <p class="story-line">Now I live in <strong>Copenhagen</strong> — a city that taught me that <em>less is everything.</em></p>
-      <p class="story-line">I'm <strong>21</strong>, a <strong>BSc Computer Science</strong> graduate — so I don't just draw screens.</p>
-      <p class="story-line dim">I understand systems, logic, constraints — and how code actually ships.</p>
-      <p class="story-line">For <strong>7+ years</strong> I've crafted interfaces: fintech, fitness, clinics, meme-coin culture.</p>
-      <p class="story-line dim">Design that looks quiet — but converts loud.</p>
-      <p class="story-line final">No decoration. Only <strong>decisions.</strong></p>
-    </div>
-    <div class="about-cards">
-      <div class="a-card reveal"><span class="a-num">21</span><span class="a-label">Years old<br>Kyiv → Copenhagen</span></div>
-      <div class="a-card reveal"><span class="a-num">BSc</span><span class="a-label">Computer Science<br>KNUTD, 2022 — 2026</span></div>
-      <div class="a-card reveal"><span class="a-num">7+</span><span class="a-label">Years on Behance<br>11K views / 3.4K likes</span></div>
-      <div class="a-card reveal"><span class="a-num">UX</span><span class="a-label">Google UX Design<br>Certificate, 2024</span></div>
-    </div>
-  </section>
-
-  <!-- WORK -->
-  <section class="work" id="work">
-    <div class="sec-head">
-      <span>02 / Selected work</span><span>2024 — 2026 · Hover to preview</span>
-    </div>
-    <h2 class="sec-title reveal">Work that<br><em>speaks quietly.</em></h2>
-
-    <div class="work-list" id="workList">
-      <a class="w-row" href="https://www.behance.net/gallery/235204293/CATI-MEME-COIN-WEBSITE-DESIGN" target="_blank" rel="noopener" data-img="https://mir-s3-cdn-cf.behance.net/projects/max_808/7b222a235204293.Y3JvcCwxNDg2LDExNjIsMjIwLDA.png">
-        <span class="w-idx">01</span>
-        <span class="w-name">CATI <em>— Meme Coin Website</em></span>
-        <span class="w-tag">UX/UI · Web3</span><span class="w-arrow">↗</span>
-      </a>
-      <a class="w-row" href="https://www.behance.net/gallery/195203649/FITSYNC-FITNESS-MOBILE-APP-UXUI-DESIGN" target="_blank" rel="noopener" data-img="https://mir-s3-cdn-cf.behance.net/projects/404/c5e038195203649.Y3JvcCwzNjU5LDI4NjIsNjcwLDE3NzU.png">
-        <span class="w-idx">02</span>
-        <span class="w-name">FitSync <em>— Fitness App</em></span>
-        <span class="w-tag">UX/UI · Mobile · 1.2K views</span><span class="w-arrow">↗</span>
-      </a>
-      <a class="w-row" href="https://www.behance.net/gallery/207853507/DENTAL-CLINIC-WEBSITE-UXUI-DESIGN" target="_blank" rel="noopener" data-img="https://mir-s3-cdn-cf.behance.net/projects/404/810fe5207853507.Y3JvcCw0MzI0LDMzODIsMzQyLDE4MQ.png">
-        <span class="w-idx">03</span>
-        <span class="w-name">Dental Clinic <em>— Website</em></span>
-        <span class="w-tag">UX/UI · Healthcare</span><span class="w-arrow">↗</span>
-      </a>
-      <a class="w-row" href="https://www.behance.net/gallery/201146225/COBE-MEME-COIN-WEBSITE-DESIGN" target="_blank" rel="noopener" data-img="https://mir-s3-cdn-cf.behance.net/projects/max_808/d118f6201146225.Y3JvcCw0NjQzLDM2MzIsMjk4LDA.png">
-        <span class="w-idx">04</span>
-        <span class="w-name">COBE <em>— Meme Coin Website</em></span>
-        <span class="w-tag">UX/UI · Web3</span><span class="w-arrow">↗</span>
-      </a>
-      <a class="w-row" href="https://www.behance.net/gallery/237016085/POOKY-MEME-COIN-WEBSITE-DESIGN" target="_blank" rel="noopener" data-img="https://mir-s3-cdn-cf.behance.net/projects/404/3231dc237016085.Y3JvcCwzODc5LDMwMzIsMCwyMTk.png">
-        <span class="w-idx">05</span>
-        <span class="w-name">POOKY <em>— Meme Coin Website</em></span>
-        <span class="w-tag">UX/UI · Web3</span><span class="w-arrow">↗</span>
-      </a>
-      <a class="w-row" href="https://www.behance.net/gallery/228112657/MEME-COIN-WEBSITE-DESIGN-DUMP" target="_blank" rel="noopener" data-img="https://mir-s3-cdn-cf.behance.net/projects/max_808/bc19f3228112657.Y3JvcCw1MTAyLDM5OTAsNDU0LDA.png">
-        <span class="w-idx">06</span>
-        <span class="w-name">Meme Pack <em>— Design Dump</em></span>
-        <span class="w-tag">Art direction</span><span class="w-arrow">↗</span>
-      </a>
-    </div>
-
-    <div class="work-preview" id="workPreview"><img id="workPreviewImg" src="" alt="" /></div>
-
-    <!-- Mobile cards -->
-    <div class="work-cards">
-      <a class="wc" href="https://www.behance.net/gallery/235204293/CATI-MEME-COIN-WEBSITE-DESIGN" target="_blank" rel="noopener">
-        <img loading="lazy" src="https://mir-s3-cdn-cf.behance.net/projects/max_808/7b222a235204293.Y3JvcCwxNDg2LDExNjIsMjIwLDA.png" alt="CATI meme coin website"><div><h3>CATI — Meme Coin</h3><p>UX/UI · Web3 ↗</p></div>
-      </a>
-      <a class="wc" href="https://www.behance.net/gallery/195203649/FITSYNC-FITNESS-MOBILE-APP-UXUI-DESIGN" target="_blank" rel="noopener">
-        <img loading="lazy" src="https://mir-s3-cdn-cf.behance.net/projects/404/c5e038195203649.Y3JvcCwzNjU5LDI4NjIsNjcwLDE3NzU.png" alt="FitSync app"><div><h3>FitSync — Fitness App</h3><p>UX/UI · Mobile ↗</p></div>
-      </a>
-      <a class="wc" href="https://www.behance.net/gallery/207853507/DENTAL-CLINIC-WEBSITE-UXUI-DESIGN" target="_blank" rel="noopener">
-        <img loading="lazy" src="https://mir-s3-cdn-cf.behance.net/projects/404/810fe5207853507.Y3JvcCw0MzI0LDMzODIsMzQyLDE4MQ.png" alt="Dental clinic"><div><h3>Dental Clinic — Website</h3><p>UX/UI · Healthcare ↗</p></div>
-      </a>
-    </div>
-
-    <a class="big-link magnetic reveal" href="https://www.behance.net/muzychenkoart" target="_blank" rel="noopener">View all on Behance ↗</a>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="sec-head"><span>03 / What I do</span><span>Design → Code</span></div>
-    <h2 class="sec-title reveal">Capabilities,<br>not buzzwords.</h2>
-    <div class="srv">
-      <div class="srv-row reveal"><span>01</span><h3>UX/UI Design</h3><p>Research, flows, wireframes, design systems, high-fidelity screens in Figma. Clean, minimal, conversion-focused.</p></div>
-      <div class="srv-row reveal"><span>02</span><h3>Web Design & Development</h3><p>Landing pages and marketing sites — designed and built. Frontend & no-code: fast, responsive, pixel-true.</p></div>
-      <div class="srv-row reveal"><span>03</span><h3>Mobile App Design</h3><p>iOS & Android product screens, components, prototypes. Fitness, fintech, healthcare — shipped examples.</p></div>
-      <div class="srv-row reveal"><span>04</span><h3>Graphic & Illustration</h3><p>Visual identity details, illustrations, Web3 / meme-coin aesthetics. Loud when needed, quiet by default.</p></div>
-    </div>
-    <div class="stack reveal">
-      <span>Figma</span><span>Photoshop</span><span>Illustrator</span><span>After Effects</span><span>HTML/CSS/JS</span><span>No-code</span><span>Design systems</span><span>Prototyping</span>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section class="exp">
-    <div class="sec-head"><span>04 / Path</span><span>Experience & education</span></div>
-    <div class="exp-grid">
-      <div class="exp-col">
-        <h4 class="reveal">Experience</h4>
-        <div class="e-row reveal"><div><strong>Freelance UX/UI Designer</strong><span>Behance · Upwork — Remote</span></div><span>2024 — Now</span></div>
-        <div class="e-row reveal"><div><strong>UX/UI Developer</strong><span>Di-Atomic</span></div><span>2024 — Now</span></div>
-        <div class="e-row reveal"><div><strong>UX/UI Designer</strong><span>Resle team — Ukraine</span></div><span>Mar 2024 — Sep 2024</span></div>
-      </div>
-      <div class="exp-col">
-        <h4 class="reveal">Education</h4>
-        <div class="e-row reveal"><div><strong>BSc Computer Science</strong><span>Kyiv National University of Technologies and Design</span></div><span>2022 — 2026</span></div>
-        <div class="e-row reveal"><div><strong>Google UX Design Certificate</strong><span>Coursera — Interaction, research, prototyping</span></div><span>2024</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUOTE -->
-  <section class="quote">
-    <p class="quote-text reveal">“Good design is invisible.<br>Great design is <em>inevitable.</em>”</p>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="sec-head"><span>05 / Contact</span><span>Response within 24h</span></div>
-    <p class="reveal">Have an idea? A product? A meme coin that needs to look like a billion dollars?</p>
-    <a class="contact-big magnetic" href="https://t.me/readyartem" target="_blank" rel="noopener">LET'S TALK ↗</a>
-    <div class="contact-grid">
-      <div><span>Email</span><a href="mailto:muzychenkoart@gmail.com">muzychenkoart@gmail.com</a></div>
-      <div><span>Telegram</span><a href="https://t.me/readyartem" target="_blank" rel="noopener">t.me/readyartem</a></div>
-      <div><span>Behance</span><a href="https://www.behance.net/muzychenkoart" target="_blank" rel="noopener">behance.net/muzychenkoart</a></div>
-      <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/muzychenkoart/" target="_blank" rel="noopener">in/muzychenkoart</a></div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <span>© 2026 Artemii Muzychenko</span>
-    <span class="hide-m">Kyiv → Copenhagen · <span id="cphTime2">--:--</span></span>
-    <a href="#top" class="magnetic">Back to top ↑</a>
-  </footer>
-
-</main>
-
-<script src="script.js"></script>
+    <section class="contact section-pad" id="contact">
+      <div class="eyebrow"><span>Let's make something</span><span>04 — 04</span></div>
+      <div class="contact-main"><p>Have a product that needs<br><em>less, but better?</em></p><a class="contact-link magnetic" href="https://t.me/readyartem" target="_blank" rel="noopener">Let's talk <span>↗</span></a></div>
+      <div class="contact-foot"><a href="mailto:muzychenkoart@gmail.com">muzychenkoart@gmail.com</a><div><a href="https://t.me/readyartem" target="_blank" rel="noopener">Telegram</a><a href="https://www.linkedin.com/in/muzychenkoart/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.behance.net/muzychenkoart" target="_blank" rel="noopener">Behance</a></div><span>Kyiv → Copenhagen<br>© Artemii Muzychenko 2026</span></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
