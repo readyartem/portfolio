@@ -122,11 +122,16 @@
 // ---------- Nav hide on scroll down ----------
 (function () {
   const nav = document.getElementById('nav');
+  const progress = document.querySelector('#scrollProgress span');
   let last = 0;
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
     nav.style.transform = y > last && y > 300 ? 'translateY(-100%)' : 'translateY(0)';
     nav.style.transition = 'transform .4s';
+    if (progress) {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.height = max > 0 ? (y / max) * 100 + '%' : '0%';
+    }
     last = y;
   }, { passive: true });
 })();
