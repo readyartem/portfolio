@@ -13,24 +13,6 @@ const load = () => {
 };
 load();
 
-const cursor = document.getElementById('cursor');
-let mouseX = 0, mouseY = 0;
-window.addEventListener('mousemove', (event) => {
-  mouseX = event.clientX; mouseY = event.clientY;
-  cursor.style.left = `${mouseX}px`; cursor.style.top = `${mouseY}px`;
-});
-document.querySelectorAll('a, button').forEach((item) => {
-  item.addEventListener('mouseenter', () => cursor.classList.remove('grow'));
-});
-
-document.querySelectorAll('.magnetic').forEach((item) => {
-  item.addEventListener('mousemove', (event) => {
-    const box = item.getBoundingClientRect();
-    item.style.transform = `translate(${(event.clientX - box.left - box.width / 2) * .16}px, ${(event.clientY - box.top - box.height / 2) * .16}px)`;
-  });
-  item.addEventListener('mouseleave', () => { item.style.transform = ''; });
-});
-
 const progress = document.getElementById('progress');
 window.addEventListener('scroll', () => {
   const max = document.documentElement.scrollHeight - innerHeight;
