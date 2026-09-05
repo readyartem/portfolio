@@ -20,8 +20,7 @@ window.addEventListener('mousemove', (event) => {
   cursor.style.left = `${mouseX}px`; cursor.style.top = `${mouseY}px`;
 });
 document.querySelectorAll('a, button').forEach((item) => {
-  item.addEventListener('mouseenter', () => cursor.classList.add('grow'));
-  item.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
+  item.addEventListener('mouseenter', () => cursor.classList.remove('grow'));
 });
 
 document.querySelectorAll('.magnetic').forEach((item) => {
