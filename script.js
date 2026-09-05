@@ -45,16 +45,21 @@ menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () =
 const track = document.getElementById('sliderTrack');
 const viewport = document.getElementById('projectSlider');
 const current = document.getElementById('slideCurrent');
-const slides = [...track.querySelectorAll('.slide-page')];
+const total = document.getElementById('slideTotal');
+const slides = [...track.querySelectorAll('.project')];
 let slideIndex = 0;
 let dragStart = 0;
 let dragDelta = 0;
 let dragging = false;
 
 const showSlide = (index) => {
-  slideIndex = (index + slides.length) % slides.length;
-  track.style.transform = `translateX(-${slideIndex * 100}%)`;
-  current.textContent = String(slideIndex + 1).padStart(2, '0');
+  const stops = innerWidth <= 700 ? slides.map((_, item) => item) : [0, 2, 4];
+  const stopIndex = (Math.round(index / 2) + stops.length) % stops.length;
+  slideIndex = stops[stopIndex];
+  const cardWidth = slides[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap);
+  track.style.transform = `translateX(-${slideIndex * cardWidth}px)`;
+  current.textContent = String(stopIndex + 1).padStart(2, '0');
+  total.textContent = String(stops.length).padStart(2, '0');
 };
 document.getElementById('slideNext').addEventListener('click', () => showSlide(slideIndex + 1));
 document.getElementById('slidePrev').addEventListener('click', () => showSlide(slideIndex - 1));
@@ -67,7 +72,8 @@ viewport.addEventListener('pointermove', (event) => {
 });
 viewport.addEventListener('pointerup', () => {
   if (!dragging) return;
-  if (Math.abs(dragDelta) > 50) showSlide(slideIndex + (dragDelta < 0 ? 1 : -1));
+  const step = innerWidth <= 700 ? 1 : 2;
+  if (Math.abs(dragDelta) > 50) showSlide(slideIndex + (dragDelta < 0 ? step : -step));
   dragging = false; viewport.classList.remove('is-dragging');
 });
 viewport.addEventListener('pointercancel', () => { dragging = false; viewport.classList.remove('is-dragging'); });
